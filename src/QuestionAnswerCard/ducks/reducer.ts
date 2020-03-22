@@ -37,6 +37,7 @@ const questionAnswerReducer = (
           `${question.questionId}.answer`,
           []
         ) as Answer[];
+
         newQuestionAnswer = {
           ...newQuestionAnswer,
           [question.questionId]: {
@@ -49,9 +50,11 @@ const questionAnswerReducer = (
 
     case getType(actions.getAnswersSuccess):
       var newQuestionAnswers = state;
+
       _.forEach(action.payload, answer => {
         newQuestionAnswers[answer.questionId].answer.push(answer);
       });
+
       return newQuestionAnswers;
 
     default:
