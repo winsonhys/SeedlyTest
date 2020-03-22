@@ -14,8 +14,7 @@ const app = (
   <Provider store={configureStore()}>
     <Router history={createBrowserHistory()}>
       <Switch>
-        <Main></Main>
-        <Route path="/">Hello</Route>
+        <Route path="/:topicId"><Main /></Route>
       </Switch>
     </Router>
   </Provider>

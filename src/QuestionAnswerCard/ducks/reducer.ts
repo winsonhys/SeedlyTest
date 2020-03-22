@@ -5,6 +5,7 @@ import actions, { ActionTypes } from "./actions";
 export interface Question {
   questionId: string;
   questionString: string;
+  topicId: "1"
 }
 
 export interface Answer {
@@ -13,6 +14,7 @@ export interface Answer {
   userId: string;
   answerString: string;
   featured: boolean;
+  topicId: string
 }
 
 export interface QuestionAnswer {
@@ -30,7 +32,6 @@ const questionAnswerReducer = (
     case getType(actions.getQuestionsSuccess):
       var newQuestionAnswer = state;
       _.forEach(action.payload, question => {
-        console.log(newQuestionAnswer)
         const answerForQuestion = _.get(
           newQuestionAnswer,
           `${question.questionId}.answer`,
@@ -48,10 +49,7 @@ const questionAnswerReducer = (
 
     case getType(actions.getAnswersSuccess):
       var newQuestionAnswers = state;
-      console.log("success", newQuestionAnswers)
-      console.log(newQuestionAnswers)
       _.forEach(action.payload, answer => {
-        console.log(answer)
         newQuestionAnswers[answer.questionId].answer.push(answer);
       });
       return newQuestionAnswers;

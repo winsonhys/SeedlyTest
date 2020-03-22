@@ -27,7 +27,6 @@ const getAnswerEpic: Epic<ActionTypes, ActionTypes> = action$ =>
   action$.pipe(
     filter(isOfType(GET_ANSWER)),
     map(action => {
-      console.log("hello")
       const answerResponse = Server.getAnswers(action.payload) as Answer[];
       return actions.getAnswersSuccess(answerResponse);
     })

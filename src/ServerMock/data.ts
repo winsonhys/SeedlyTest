@@ -5,8 +5,8 @@ const DATA = {
   ],
 
   TOPIC_QUESTIONS: {
-    "1": [{ questionId: "q1", questionString: "Is seedly the best?" }],
-    "2": [{ questionId: "q2", questionString: "Are other apps the best?" }]
+    "1": [{ questionId: "q1", topicId: "1", questionString: "Is seedly the best?" }],
+    "2": [{ questionId: "q2", topicId: "2", questionString: "Are other apps the best?" }]
   },
 
   TOPIC_ANSWERS: [
@@ -15,21 +15,24 @@ const DATA = {
       userId: "u1",
       answerString: "Yes",
       featured: true,
-      questionId: "q1"
+      questionId: "q1",
+      topicId: "1"
     },
     {
       answerId: "a1",
       userId: "u2",
       answerString: "no",
       featured: false,
-      questionId: "q1"
+      questionId: "q1",
+      topicId: "1"
     },
     {
       answerId: "a2",
       userId: "u2",
       answerString: "Maybe",
       featured: true,
-      questionId: "q2"
+      questionId: "q2",
+      topicId: "2"
     }
   ],
   USERS: {
