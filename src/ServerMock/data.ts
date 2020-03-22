@@ -6,7 +6,7 @@ const DATA = {
 
   TOPIC_QUESTIONS: {
     "1": [{ questionId: "q1", topicId: "1", questionString: "Is seedly the best?" }],
-    "2": [{ questionId: "q2", topicId: "2", questionString: "Are other apps the best?" }]
+    "2": [{ questionId: "q2", topicId: "2", questionString: "Are other apps the best?" }, { questionId: "q3", topicId: "2", questionString: "This is an unanswered question" }],
   },
 
   TOPIC_ANSWERS: [
