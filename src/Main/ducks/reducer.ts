@@ -2,7 +2,7 @@ import { StateType, getType } from "typesafe-actions";
 import actions, { ActionTypes } from "./actions";
 
 export interface FeaturedTopics {
-  topicId: number;
+  topicId: string;
   topicName: String;
 }
 

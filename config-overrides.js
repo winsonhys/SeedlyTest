@@ -2,7 +2,8 @@ const path = require("path");
 const {
   override,
   fixBabelImports,
-  addWebpackModuleRule
+  addWebpackModuleRule,
+  useBabelRc
 } = require("customize-cra");
 
 const getModulePath = module => path.resolve(__dirname, "src", module);
@@ -13,6 +14,7 @@ module.exports = override(
     libraryDirectory: "es",
     style: true
   }),
+  useBabelRc(),
   addWebpackModuleRule({
     test: /\.gql$/,
     exclude: /node_modules/,

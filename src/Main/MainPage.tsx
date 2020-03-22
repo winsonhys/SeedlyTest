@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { Menu, Layout } from "antd";
 import { PropsFromRedux } from "./MainPageHOC";
+import QuestionAnswer from "../QuestionAnswerCard"
 
-const { Sider, Header } = Layout;
+const { Sider, Header, Content } = Layout;
 const MenuItem = Menu.Item;
 
-interface ComponentProps {}
+interface ComponentProps { }
 
 const NavigationMenu: React.FC<PropsFromRedux & ComponentProps> = ({
   getFeaturedTopics,
@@ -26,6 +27,7 @@ const NavigationMenu: React.FC<PropsFromRedux & ComponentProps> = ({
         <Sider>
           <Menu mode="inline">{sidebarItems}</Menu>
         </Sider>
+        <Content><QuestionAnswer /> </Content>
       </Layout>
     </Layout>
   );
