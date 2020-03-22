@@ -10,18 +10,19 @@ const QuestionAnswer: React.FC<PropsFromRedux> = props => {
   const { topicId } = useParams()
 
   useEffect(() => {
-    props.getQuestions([topicId ?? "1"])
+    props.getQuestions(topicId ?? "1")
   }, [topicId])
   return (
     <List
-      grid={{ gutter: 16, column: 4 }}
-      dataSource={_.filter(questionAnswerArray, questionAnswer => questionAnswer.question.topicId === topicId)}
+      grid={{ gutter: 4, column: 1 }}
+      dataSource={_.filter(questionAnswerArray, questionAnswer => topicId === "0" ? true : questionAnswer.question.topicId === topicId)}
       renderItem={item => {
         const featuredAnswer = _.find(item.answer, answer => answer.featured);
         return (
           <List.Item>
             <Card title={item.question.questionString}>
-              {featuredAnswer?.answerString}
+              <b>Answer:</b>
+              <p>{featuredAnswer?.answerString}</p>
             </Card>
           </List.Item>
         );

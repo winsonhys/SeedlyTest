@@ -7,7 +7,7 @@ export const GET_ANSWER = "GET_ANSWER";
 const GET_ANSWER_SUCCESS = "GET_ANSWER_SUCCESS";
 
 export const actions = {
-  getQuestion: createAction(GET_QUESTION, (topicIds: string[]) => topicIds)(),
+  getQuestion: createAction(GET_QUESTION, (topicId: string) => topicId)(),
   getQuestionsSuccess: createAction(
     GET_QUESTION_SUCCESS,
     (payload: Question[]) => payload

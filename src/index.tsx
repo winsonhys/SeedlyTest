@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import { Provider } from "react-redux";
-import { Router, Switch, Route } from "react-router";
+import { Router, Switch, Route, Redirect } from "react-router";
 import { createBrowserHistory } from "history";
 import configureStore from "./redux/configureStore";
 import * as serviceWorker from "./serviceWorker";
@@ -14,6 +14,9 @@ const app = (
   <Provider store={configureStore()}>
     <Router history={createBrowserHistory()}>
       <Switch>
+        <Route exact path="/">
+          <Redirect exact from="/" to="/1" />
+        </Route>
         <Route path="/:topicId"><Main /></Route>
       </Switch>
     </Router>
