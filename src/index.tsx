@@ -7,11 +7,14 @@ import { createBrowserHistory } from "history";
 import configureStore from "./redux/configureStore";
 import * as serviceWorker from "./serviceWorker";
 
+import Main from "./Main";
+
 // Wraps the gql client on top of our app.
 const app = (
   <Provider store={configureStore()}>
     <Router history={createBrowserHistory()}>
       <Switch>
+        <Main></Main>
         <Route path="/">Hello</Route>
       </Switch>
     </Router>

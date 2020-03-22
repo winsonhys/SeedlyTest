@@ -1,11 +1,15 @@
 import { combineEpics } from "redux-observable";
 import { combineReducers } from "redux";
-// import ping, { pingEpic } from "./ping";
+import featuredTopicsReducer from "../Main/ducks/reducer";
+import featuredTopicEpic from "../Main/ducks/epic";
+import { StateType } from "typesafe-actions";
 // import users, { fetchUserEpic } from "./users";
 
-export const rootEpic = combineEpics();
+export const rootEpic = combineEpics(featuredTopicEpic);
 
 export const rootReducer = combineReducers({
-  // ping,
+  featuredTopics: featuredTopicsReducer
   // users
 });
+
+export type RootState = StateType<typeof rootReducer>;
